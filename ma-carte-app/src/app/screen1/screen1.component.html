@@ -1,0 +1,14 @@
+<!-- src/app/screen1/screen1.component.html -->
+<!-- screen1.component.html -->
+<h2>Screen 1</h2>
+<!-- Ajoutez ici le code HTML pour afficher la carte avec les markers -->
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker *ngFor="let capital of capitals" [latitude]="capital.lat" [longitude]="capital.lng" (markerClick)="onMarkerClick(capital)">
+    <agm-info-window [disableAutoPan]="true">
+      <strong>{{ capital.name }}</strong><br>
+      Population: {{ capital.population }}
+    </agm-info-window>
+  </agm-marker>
+</agm-map>
+
+  
