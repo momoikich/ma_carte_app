@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ma-carte-app": {
+    "nom-de-votre-projet": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ma-carte-app",
+            "outputPath": "dist/nom-de-votre-projet",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ma-carte-app:build:production"
+              "buildTarget": "nom-de-votre-projet:build:production"
             },
             "development": {
-              "buildTarget": "ma-carte-app:build:development"
+              "buildTarget": "nom-de-votre-projet:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "ma-carte-app:build"
+            "buildTarget": "nom-de-votre-projet:build"
           }
         },
         "test": {
@@ -96,8 +96,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "68a68b43-d9f9-4bc5-b9a6-6bd3a5b79008"
   }
 }
