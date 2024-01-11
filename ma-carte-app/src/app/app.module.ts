@@ -1,7 +1,6 @@
 /// app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AgmCoreModule } from '@agm/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { Screen1Component } from './screen1/screen1.component';
@@ -16,12 +15,10 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AgmCoreModule,
     Screen1Component,
     Screen2Component,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes),
-    AgmCoreModule.forRoot(),],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers : [],
   bootstrap: [AppComponent],
 })
