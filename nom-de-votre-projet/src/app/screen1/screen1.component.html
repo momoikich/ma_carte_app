@@ -1,0 +1,10 @@
+<!-- screen1.component.html -->
+
+<div>
+    <h2>Map with Capitals</h2>
+    <div id="map"></div>
+    <div *ngFor="let capital of capitals">
+      <strong>{{ capital.name }}</strong> - Population: {{ capital.population }}
+    </div>
+  </div>
+  

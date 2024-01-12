@@ -1,0 +1,32 @@
+<div>
+    <h2>Liste des Capitales</h2>
+    <ul>
+      <li *ngFor="let capital of capitals">
+        {{ capital.name }} - Population: {{ capital.population }}
+        <button (click)="editCapital(capital)">Modifier</button>
+        <button (click)="deleteCapital(capital)">Supprimer</button>
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="selectedCapital">
+    <h2>Modifier la Capitale</h2>
+    <form>
+      <!-- Ajoutez les champs du formulaire pour modifier la capitale -->
+      <label>Nom: </label>
+      <input [(ngModel)]="selectedCapital.name" name="name" />
+  
+      <label>Population: </label>
+      <input [(ngModel)]="selectedCapital.population" name="population" />
+  
+      <!-- Ajoutez d'autres champs ici -->
+  
+      <button (click)="saveChanges()">Enregistrer</button>
+    </form>
+  </div>
+  
+  <div>
+    <h2>Créer une Nouvelle Capitale</h2>
+    <button (click)="createCapital()">Nouvelle Capitale</button>
+  </div>
+  
