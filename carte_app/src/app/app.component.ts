@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'nom-de-votre-projet';
+  title = 'carte_app';
   constructor(private router: Router) {}
   navigateToScreen1() {
     this.router.navigate(['/screen1']);
