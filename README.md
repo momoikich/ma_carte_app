@@ -1,7 +1,7 @@
 
 # Mon Application Angular de Carte
 
-Il s'agit d'une application Angular simple qui affiche une carte avec des marqueurs pour différentes capitales. Elle se compose de deux écrans : l'écran 1 affiche la carte avec des marqueurs, et l'écran 2 permet aux utilisateurs de visualiser, modifier et supprimer des informations sur les capitales.
+Il s'agit d'une application Angular simple qui affiche une carte avec des marqueurs pour différentes capitales. Elle se compose de deux écrans : l'écran 1 affiche la carte avec des marqueurs, et l'écran 2 permet aux utilisateurs de visualiser, modifier et supprimer des informations sur les capitales. 
 
 ## Table des matières
 
