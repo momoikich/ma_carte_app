@@ -20,14 +20,14 @@ export class CapitalService {
   }
 
   updateCapital(updatedCapital: any) {
-    // Recherchez l'index de la capitale à mettre à jour
+    // Recherche de l'index de la capitale à mettre à jour
     const index = this.capitals.findIndex(capital => capital.name === updatedCapital.name);
 
     if (index !== -1) {
-      // Mettez à jour la capitale
+      // Mettre à jour la capitale
       this.capitals[index] = { ...this.capitals[index], ...updatedCapital };
 
-      // Émettez un événement pour informer les composants de la modification
+      // un événement pour informer les composants de la modification
       this.capitalsSubject.next([...this.capitals]);
     }
   }
@@ -38,15 +38,15 @@ export class CapitalService {
       this.capitals.splice(index, 1);
     }
 
-    // Émettez un événement pour informer les composants de la suppression
+    // un événement pour informer les composants de la suppression
     this.capitalsSubject.next([...this.capitals]);
   }
 
 
   addCapital(newCapital: any): void {
-    // Logique pour ajouter une nouvelle capitale
+    // ajouter une nouvelle capitale
     this.capitals.push(newCapital);
-    // Émettez un événement pour informer les composants de la suppression
+    // événement pour informer les composants de la suppression
     this.capitalsSubject.next([...this.capitals]);
   }
 
