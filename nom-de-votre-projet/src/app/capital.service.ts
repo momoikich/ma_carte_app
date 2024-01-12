@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,27 +12,43 @@ export class CapitalService {
     { name: 'Berlin', population: '3.645 million', lat: 52.5200, lon: 13.4050 },
     { name: 'Beijing', population: '21.516 million', lat: 39.9042, lon: 116.4074 }
   ];
+  private capitalsSubject = new BehaviorSubject<any[]>(this.capitals);
+  capitals$ = this.capitalsSubject.asObservable();
 
   getCapitals(): any[] {
     return this.capitals;
   }
 
-  updateCapital(updatedCapital: any): void {
-    // Logique pour mettre à jour une capitale
-    // Vous pouvez implémenter la logique de mise à jour en fonction de vos besoins
+  updateCapital(updatedCapital: any) {
+    // Recherchez l'index de la capitale à mettre à jour
+    const index = this.capitals.findIndex(capital => capital.name === updatedCapital.name);
+
+    if (index !== -1) {
+      // Mettez à jour la capitale
+      this.capitals[index] = { ...this.capitals[index], ...updatedCapital };
+
+      // Émettez un événement pour informer les composants de la modification
+      this.capitalsSubject.next([...this.capitals]);
+    }
   }
+
+  deleteCapital(capitalToDelete: any) {
+    const index = this.capitals.indexOf(capitalToDelete);
+    if (index !== -1) {
+      this.capitals.splice(index, 1);
+    }
+
+    // Émettez un événement pour informer les composants de la suppression
+    this.capitalsSubject.next([...this.capitals]);
+  }
+
 
   addCapital(newCapital: any): void {
     // Logique pour ajouter une nouvelle capitale
     this.capitals.push(newCapital);
+    // Émettez un événement pour informer les composants de la suppression
+    this.capitalsSubject.next([...this.capitals]);
   }
 
-  deleteCapital(deletedCapital: any): void {
-    // Logique pour supprimer une capitale
-    const index = this.capitals.indexOf(deletedCapital);
-    if (index !== -1) {
-      this.capitals.splice(index, 1);
-    }
-  }
 }
 

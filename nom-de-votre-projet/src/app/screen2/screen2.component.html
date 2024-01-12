@@ -19,7 +19,11 @@
       <label>Population: </label>
       <input [(ngModel)]="selectedCapital.population" name="population" />
   
-      <!-- Ajoutez d'autres champs ici -->
+      <label>longitude: </label>
+      <input [(ngModel)]="selectedCapital.lon" name="longitude" />
+
+      <label>latitude: </label>
+      <input [(ngModel)]="selectedCapital.lat" name="latitude" />
   
       <button (click)="saveChanges()">Enregistrer</button>
     </form>
