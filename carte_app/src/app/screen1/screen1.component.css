@@ -2,21 +2,3 @@
 #map {
     height: 400px;
   }
-  /* Ajoutez ces styles pour corriger le problème des icônes manquantes */
-  .leaflet-default-icon-path {
-    background-image: url('https://unpkg.com/leaflet/dist/images/marker-icon.png');
-    background-size: contain;
-  }
-  .leaflet-default-icon {
-    background-image: url('https://unpkg.com/leaflet/dist/images/marker-icon-2x.png');
-    background-size: contain;
-  }
-  .leaflet-default-icon:hover {
-    background-image: url('https://unpkg.com/leaflet/dist/images/marker-icon-2x.png');
-    background-size: contain;
-  }
-  .leaflet-marker-shadow {
-    background-image: url('https://unpkg.com/leaflet/dist/images/marker-shadow.png');
-    background-size: contain;
-  }
-  
